@@ -1,0 +1,14 @@
+FROM python:3.7.5
+
+WORKDIR /opt/app
+
+RUN pip install pipenv
+
+COPY Pipfile /opt/app
+COPY Pipfile.lock /opt/app
+
+RUN pipenv sync
+
+COPY . /opt/app
+
+CMD ["pipenv", "run", "python", "main.py"]
