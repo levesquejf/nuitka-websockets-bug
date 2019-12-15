@@ -1,4 +1,4 @@
-Issue tracked at [Nuitka/#xxx](https://github.com/Nuitka/Nuitka/issues/xxx) and [Websockets/#669](https://github.com/aaugustin/websockets/issues/699).
+Issue tracked at [Nuitka/#588](https://github.com/Nuitka/Nuitka/issues/588) and [Websockets/#669](https://github.com/aaugustin/websockets/issues/699).
 
 This repo reproduces a bug causing memory leaks when using `Websockets` >= 8.0 with `Nuitka`. When the `reader()` task is cancelled, the `WebSocketCommonProtocol.close_connection()`, `WebSocketCommonProtocol.keepalive_ping()` and `WebSocketCommonProtocol.transfer_data()` tasks are still present in the `asyncio.Task.all_tasks()` even if `gc.collect()` is run manually. The issue only occurs when the code is compiled with nuitka. It can be easily reproduced using Docker containers.
 
