@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3c87b704c44dde3d3c71685e1f724e6b7ae8d779c0cb5e53c9015af169de5167"
+            "sha256": "50ef089382e506340a1b9da7918dc9f8df25b2f1103d32025ed530e0d6427e1b"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -14,12 +14,27 @@
         ]
     },
     "default": {
+        "graphviz": {
+            "hashes": [
+                "sha256:241fb099e32b8e8c2acca747211c8237e40c0b89f24b1622860075d59f4c4b25",
+                "sha256:60acbeee346e8c14555821eab57dbf68a169e6c10bce40e83c1bf44f63a62a01"
+            ],
+            "version": "==0.13.2"
+        },
         "nuitka": {
             "hashes": [
                 "sha256:bb9e883deb92b79d6263b33d94a106808f0cf07acdcc7854fa84096a02cd97ca"
             ],
             "index": "pypi",
             "version": "==0.6.5"
+        },
+        "objgraph": {
+            "hashes": [
+                "sha256:10d50116d1a66934d143a07308a5b3b3edcc021e1457f66ff792584166cae7cd",
+                "sha256:bf29512d7f8b457b53fa0722ea59f516abb8abc59b78f97f0ef81394a0c615a7"
+            ],
+            "index": "pypi",
+            "version": "==3.4.1"
         },
         "websockets": {
             "hashes": [

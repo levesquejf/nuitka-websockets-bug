@@ -1,5 +1,6 @@
 import asyncio
 import gc
+import objgraph
 import websockets
 
 from concurrent.futures import CancelledError
@@ -36,10 +37,23 @@ async def writer(ws, text):
 
 
 async def run():
+    await hello(f"Test")
+
+    print("Objects before loop")
+    gc.collect()
+    obj_start = len(gc.get_objects())
+    objgraph.show_growth(shortnames=False)
+
     for i in range(0, 20):
         await hello(f"Test {i}")
 
+    print("\n\nObjects after loop")
     gc.collect()
+    obj_end = len(gc.get_objects())
+    objgraph.show_growth(shortnames=False)
+
+    print(f"\nObjects Count Diff: {obj_end - obj_start}")
+
     for t in asyncio.Task.all_tasks():
         print(t)
 
